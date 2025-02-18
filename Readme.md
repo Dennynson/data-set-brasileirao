@@ -7,7 +7,10 @@ API's de esportes, em especial a do "The SportsDB". Também considera-se o uso d
 
 ## Integrantes:
 Matias Monteiro de Araújo
+
 Dennynson Scheydt Medeiros do Nascimento
+
 Vinícius da Silva Cunha
+
 João Matheus
 
