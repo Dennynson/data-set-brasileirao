@@ -1,4 +1,5 @@
 import requests
+import csv
 
 def get_football_data(endpoint, params=None):
     url = f"https://v3.football.api-sports.io/{endpoint}"
