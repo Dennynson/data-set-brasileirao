@@ -1,6 +1,7 @@
 import requests
 import csv
 
+# Nesta API conseguimos apenas os dados de 2024.
 def save_standings_to_csv_2024(standings, filename):
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
