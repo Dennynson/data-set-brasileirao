@@ -1,6 +1,7 @@
 import requests
 import csv
 
+#Nesta API conseguimos dados de 2021-2023
 def get_football_data(endpoint, params=None):
     url = f"https://v3.football.api-sports.io/{endpoint}"
     headers = {
@@ -67,6 +68,8 @@ def main():
     league_id = 71  # Brasileirão Série A
     
     raw_standings_data = collect_raw_league_standings(league_id, start_season, end_season)
+
+    print(raw_standings_data)
     
     save_standings_to_csv(raw_standings_data, "brasileirao_standings.csv")
 
