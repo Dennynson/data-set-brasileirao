@@ -55,7 +55,7 @@ def main():
 
     # Limpando espaços extras e exibindo os dados
     dados_limpados = [re.sub(r'\s+', ' ', td.text.strip()) for td in filtro]
-    dados_limpados = list(filter(None, dados_limpados))
+    dados_limpados = list(filter(None, dados_limpados)) # Removendo elementos vazios
 
     # Exibindo os primeiros elementos para verificar a limpeza
     print(dados_limpados)
