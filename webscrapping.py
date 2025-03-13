@@ -2,20 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-def remover_vazios(lista):
-    lista_filtrada = []
-    for elemento in lista:
-        if(elemento == [None]):
-            continue
-        lista_filtrada.append(elemento)
-    
-    return lista_filtrada
-
-
 def organizar_scrapping(dados_limpados):
     times = []
     for i in range(0, len(dados_limpados), 9):  # Cada time ocupa 9 posições na lista
-     time = {
+        time = {
         "Posição": dados_limpados[i],
         "Time": dados_limpados[i+1],
         "Jogos": dados_limpados[i+2],
@@ -26,7 +16,8 @@ def organizar_scrapping(dados_limpados):
         "Saldo de Gols": dados_limpados[i+7],
         "Pontos": dados_limpados[i+8]
     }
-     times.append(time)
+        times.append(time)
+        
     return times
 
 
@@ -43,11 +34,11 @@ def main():
     filtro = table[82:283] #filtrando o html
 
     # Limpando espaços extras e exibindo os dados
-    dados_limpados = [re.sub(r'\s+', ' ', td.text.strip()) for td in filtro]
-    dados_limpados = list(filter(None, dados_limpados)) # Removendo elementos vazios
+    dados_limpos = [re.sub(r'\s+', ' ', td.text.strip()) for td in filtro]
+    dados_limpos = list(filter(None, dados_limpos)) # Removendo elementos vazios
 
     # Exibindo os primeiros elementos para verificar a limpeza
-    times = organizar_scrapping(dados_limpados)
+    times = organizar_scrapping(dados_limpos)
     # Exibindo os dados de forma organizada
     for time in times:
         print(time)
