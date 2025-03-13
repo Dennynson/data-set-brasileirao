@@ -46,6 +46,8 @@ def save_standings_to_csv(standings, filename, season):
 
 
 def main():
+
+    #falta criar o loop para coletar tudo desde 2020.
     url = "https://www.worldfootball.net/schedule/bra-serie-a-2020-spieltag/38/"
 
     html = requests.get(url).text
