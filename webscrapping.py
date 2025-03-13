@@ -12,33 +12,22 @@ def remover_vazios(lista):
     return lista_filtrada
 
 
-def organizar_scrapping(filtro):
-    dados = []
-    for i in range(0, len(filtro)):
-        posicao = filtro[i].text.strip()
-        time = filtro[i+1].text.strip()
-        jogos = filtro[i+2].text.strip()
-        vitorias = filtro[i+3].text.strip()
-        empates = filtro[i+4].text.strip()
-        derrotas = filtro[i+5].text.strip()
-        gols_marcados = filtro[i+6].text.strip()
-        gols_sofridos = filtro[i+7].text.strip()
-        pontos = filtro[i+8].text.strip()
-        
-        dados.append({
-            "Posição": posicao,
-            "Time": time,
-            "Jogos": jogos,
-            "Vitórias": vitorias,
-            "Empates": empates,
-            "Derrotas": derrotas,
-            "Gols marcados": gols_marcados,
-            "Gols sofridos": gols_sofridos,
-            "Pontos": pontos
-        })
-
-
-    return dados
+def organizar_scrapping(dados_limpados):
+    times = []
+    for i in range(0, len(dados_limpados), 9):  # Cada time ocupa 9 posições na lista
+     time = {
+        "Posição": dados_limpados[i],
+        "Time": dados_limpados[i+1],
+        "Jogos": dados_limpados[i+2],
+        "Vitórias": dados_limpados[i+3],
+        "Empates": dados_limpados[i+4],
+        "Derrotas": dados_limpados[i+5],
+        "Gols": dados_limpados[i+6],
+        "Saldo de Gols": dados_limpados[i+7],
+        "Pontos": dados_limpados[i+8]
+    }
+     times.append(time)
+    return times
 
 
 def main():
@@ -58,7 +47,10 @@ def main():
     dados_limpados = list(filter(None, dados_limpados)) # Removendo elementos vazios
 
     # Exibindo os primeiros elementos para verificar a limpeza
-    print(dados_limpados)
+    times = organizar_scrapping(dados_limpados)
+    # Exibindo os dados de forma organizada
+    for time in times:
+        print(time)
 
 if(__name__ == "__main__"):
     main()
