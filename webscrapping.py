@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import re
 
 def remover_vazios(lista):
     lista_filtrada = []
@@ -52,6 +53,12 @@ def main():
 
     filtro = table[82:283] #filtrando o html
 
+    # Limpando espaços extras e exibindo os dados
+    dados_limpados = [re.sub(r'\s+', ' ', td.text.strip()) for td in filtro]
+    dados_limpados = list(filter(None, dados_limpados))
+
+    # Exibindo os primeiros elementos para verificar a limpeza
+    print(dados_limpados)
 
 if(__name__ == "__main__"):
     main()
