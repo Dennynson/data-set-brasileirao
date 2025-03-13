@@ -29,10 +29,8 @@ def collect_raw_league_standings(league_id, start_season, end_season):
 def save_standings_to_csv(standings, filename):
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(["Temporada","Posicao", "Time", "Pontos", "Saldo de Gols", "Jogos", "Vitorias", "Empates", "Derrotas", "Jogos em casa",
-                         "Vitorias em casa", "Empates em casa", "Derrotas em casa", "Gols marcados em casa", "Gols sofridos em casa",
-                           "Jogos fora de casa", "Vitorias fora de casa", "Empates fora de casa", "Derrotas fora de casa",
-                           "Gols marcados fora de casa", "Gols sofridos fora de casa"])
+        writer.writerow(["Temporada","Posicao", "Time", "Pontos", "Saldo de Gols", "Jogos", "Vitorias", "Empates", "Derrotas",
+                          "Gols marcados", "Gols sofridos"])
             
         for season, data in standings.items():
             for league in data:
@@ -47,20 +45,9 @@ def save_standings_to_csv(standings, filename):
                         team["all"]["win"],
                         team["all"]["draw"],
                         team["all"]["lose"],
-                        team["home"]["played"],
-                        team["home"]["win"],
-                        team["home"]["draw"],
-                        team["home"]["lose"],
-                        team["home"]["goals"]["for"],
-                        team["home"]["goals"]["against"],
-                        team["away"]["played"],
-                        team["away"]["win"],
-                        team["away"]["draw"],
-                        team["away"]["lose"],
-                        team["away"]["goals"]["for"],
-                        team["away"]["goals"]["against"]
+                        team["all"]["goals"]["for"],
+                        team["all"]["goals"]["against"]
                         ])
-
 
 def main():
     start_season = 2021
@@ -71,7 +58,7 @@ def main():
 
     print(raw_standings_data)
     
-    save_standings_to_csv(raw_standings_data, "brasileirao_standings.csv")
+    save_standings_to_csv(raw_standings_data, "brasileirao_2021_2023.csv")
 
 if (__name__ == "__main__"):
    main()
