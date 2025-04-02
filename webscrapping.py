@@ -3,6 +3,14 @@ import requests
 import csv
 import re
 
+# Nesta API conseguimos apenas os dados de 2024.
+
+def mapeamento_times(dataset):
+    times = {
+        "Botafogo FR": "Botafogo",
+        
+    }
+
 def organizar_scrapping(dados_limpos, season):
     temporada = []
 
