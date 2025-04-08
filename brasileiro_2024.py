@@ -28,9 +28,6 @@ def save_standings_to_csv_2024(standings, filename):
 
 def main():
     id = "2013"
-
-    years = range(2017, 2021)
-
     
     url = f"https://api.football-data.org/v4/competitions/{id}/standings?season=2024"
 
@@ -40,6 +37,7 @@ def main():
     response = requests.get(url, headers=headers)
 
     data = response.json()
+
     save_standings_to_csv_2024(data, "brasileirao_2024.csv")
 
 if (__name__ == "__main__"):
