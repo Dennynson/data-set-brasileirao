@@ -3,40 +3,7 @@ import requests
 import csv
 import re
 
-# Nesta API conseguimos apenas os dados de 2024.
-
-def mapeamento_times(dataset):
-    times = {
-        "Botafogo FR": "Botafogo",
-        "Botafogo - RJ": "Botafogo",
-        "CR Vasco da Gama": "Vasco",
-        "Cruzeiro EC": "Cruzeiro",
-        "EC Bahia": "Bahia",
-        "SC Corinthians Paulista": "Corinthians",
-        "SC Internacional": "Internacional",
-        "Fortaleza EC": "Fortaleza",
-        "CR Flamengo": "Flamengo",
-        "Flamengo RJ": "Flamengo",
-        "São Paulo FC": "São Paulo",
-        "Sport Club Recife": "Sport",
-        "SE Palmeiras": "Palmeiras",
-        "AC Goianiense": "Goianiense",
-        "Criciúma EC": "Criciúma",
-        "Cuiabá EC": "Cuiabá",
-        "CA Paranaense": "Paranaense",
-        "RB Bragantino": "Bragantino",
-        "EC Juventude": "Juventude",
-        "Grêmio FBPA": "Grêmio",
-        "Fluminense FC": "Fluminense",
-        "Fluminense RJ": "Fluminense",
-        "EC Vitória": "Vitória",
-        "CA Mineiro": "Atlético Mineiro",
-
-    }
-
-    dataset['Time'] = dataset['Time'].replace(times)
-
-    return dataset
+# Nesta API conseguimos apenas os dados de 2024
 
 def organizar_scrapping(dados_limpos, season):
     temporada = []
