@@ -7,7 +7,7 @@ Dennynson Scheydt Medeiros do Nascimento
 
 Vinícius da Silva Cunha
 
-João Matheus
+João Matheus Silva Paiva
 
 **Descrição do Conjunto de Dados**
 O conjunto de dados coletado contém informações sobre a classificação final do Campeonato Brasileiro Série A entre os anos de 2006 e 2024. Ele reúne estatísticas essenciais de cada temporada, permitindo análises sobre o desempenho dos times ao longo dos anos. O formato escolhido para armazenar os dados foi CSV, facilitando sua manipulação e integração com ferramentas de análise de dados.
