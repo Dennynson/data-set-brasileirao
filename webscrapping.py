@@ -3,7 +3,7 @@ import requests
 import csv
 import re
 
-# Nesta API conseguimos apenas os dados de 2024
+# Webscrapping dos dados de 2006-2020 do Campeonato Brasileiro Série A
 
 def organizar_scrapping(dados_limpos, season):
     temporada = []
